@@ -6,4 +6,6 @@ package petrerkingdead;
  */
 public class Superviviente {
     
+    public static final String SUPERVIVIENTE = "S";
+    
 }
