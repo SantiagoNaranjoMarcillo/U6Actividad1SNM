@@ -35,4 +35,9 @@ public class Casillas {
         };
         return casillas;
     }
+    
+    public static boolean noHayLimite(int[][] escenario, int x, int y) {
+        return escenario[x][y] != TIPO_LIMITE;
+
+    }
 }
