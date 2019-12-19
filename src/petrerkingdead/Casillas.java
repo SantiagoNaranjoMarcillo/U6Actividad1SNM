@@ -43,4 +43,8 @@ public class Casillas {
     public static boolean hayItem(int[][] escenario, int x, int y) {
         return escenario[x][y] != TIPO_ITEM;
     }
+
+    public static boolean vaciaCasilla(int[][] escenario, int x, int y) {
+        return escenario[x][y] != TIPO_VACIA;
+    }
 }
