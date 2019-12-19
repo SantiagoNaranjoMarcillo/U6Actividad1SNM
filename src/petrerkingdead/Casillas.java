@@ -5,11 +5,11 @@ package petrerkingdead;
  * @author Santiago Naranjo Marcillo
  */
 public class Casillas {
-    
+
     private static final int TIPO_VACIA = 1;
     private static final int TIPO_LIMITE = 2;
     private static final int TIPO_ITEM = 3;
-    
+
     public static int[][] creaCasillasEscenarioJuego() {
         int lmte = TIPO_LIMITE;
         int item = TIPO_ITEM;
@@ -35,9 +35,12 @@ public class Casillas {
         };
         return casillas;
     }
-    
+
     public static boolean noHayLimite(int[][] escenario, int x, int y) {
         return escenario[x][y] != TIPO_LIMITE;
+    }
 
+    public static boolean hayItem(int[][] escenario, int x, int y) {
+        return escenario[x][y] != TIPO_ITEM;
     }
 }
