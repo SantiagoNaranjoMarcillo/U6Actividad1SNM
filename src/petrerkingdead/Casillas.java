@@ -47,4 +47,16 @@ public class Casillas {
     public static boolean vaciaCasilla(int[][] escenario, int x, int y) {
         return escenario[x][y] != TIPO_VACIA;
     }
+
+    public static String casillaATexto(int[][] escenario, int x, int y) {
+        if (escenario[x][y] == TIPO_VACIA) {
+            return " ";
+        } else if (escenario[x][y] == TIPO_ITEM) {
+            return "·";
+        } else if (escenario[x][y] == TIPO_LIMITE) {
+            return "\"";
+        } else {
+            return "";
+        }
+    }
 }
