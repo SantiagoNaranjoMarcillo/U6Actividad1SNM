@@ -1,5 +1,7 @@
 package petrerkingdead;
 
+import java.util.Random;
+
 /**
  *
  * @author Santiago Naranjo Marcillo
