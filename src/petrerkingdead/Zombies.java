@@ -26,7 +26,8 @@ public class Zombies {
             switch (movimientoRandom) {
                             case 0://arriba
                                 if (Casillas.noHayLimite(escenario, posicion[zombie][0] - 1, posicion[zombie][1])
-                                        && posicionSuperviviente[0] != posicion[zombie][0]) {
+                                        && posicionSuperviviente[0] != posicion[zombie][0]
+                                        && zombieNoChocar(posicion, zombie, movimientoRandom)) {
                                     posicion[zombie][0] -= 1;
                                     correctoZombie = true;
                                 }
@@ -34,7 +35,8 @@ public class Zombies {
                                 break;
                             case 1://abajo
                                 if (Casillas.noHayLimite(escenario, posicion[zombie][0] + 1, posicion[zombie][1])
-                                        && posicionSuperviviente[0] != posicion[zombie][0]) {
+                                        && posicionSuperviviente[0] != posicion[zombie][0]
+                                        && zombieNoChocar(posicion, zombie, movimientoRandom)) {
                                     posicion[zombie][0] += 1;
                                     correctoZombie = true;
                                 }
@@ -42,7 +44,8 @@ public class Zombies {
                                 break;
                             case 2://derecha
                                 if (Casillas.noHayLimite(escenario, posicion[zombie][0], posicion[zombie][1] + 1)
-                                        && posicionSuperviviente[1] != posicion[zombie][1]) {
+                                        && posicionSuperviviente[1] != posicion[zombie][1]
+                                        && zombieNoChocar(posicion, zombie, movimientoRandom)) {
                                     posicion[zombie][1] += 1;
                                     correctoZombie = true;
                                 }
@@ -50,7 +53,8 @@ public class Zombies {
                                 break;
                             case 3://izquierda
                                 if (Casillas.noHayLimite(escenario, posicion[zombie][0], posicion[zombie][1] - 1)
-                                        && posicionSuperviviente[1] != posicion[zombie][1]) {
+                                        && posicionSuperviviente[1] != posicion[zombie][1]
+                                        && zombieNoChocar(posicion, zombie, movimientoRandom)) {
                                     posicion[zombie][1] -= 1;
                                     correctoZombie = true;
                                 }
@@ -69,5 +73,34 @@ public class Zombies {
                 } while (!correctoZombie);
 
             }
+    
+    private static boolean zombieNoChocar(int[][] posicionZombie, int zombie, int movimientoRandom) {
+        for (int i = 0; i < posicionZombie.length; i++) {
+            switch(movimientoRandom){
+                case 0://arriba
+                    if (posicionZombie[zombie][0] - 1 == posicionZombie[i][0] 
+                            && posicionZombie[zombie][1] == posicionZombie[i][1]){
+                        return false;}
+                    break;
 
+                case 1://abajo
+                    if (posicionZombie[zombie][0] + 1 == posicionZombie[i][0] 
+                            && posicionZombie[zombie][1] == posicionZombie[i][1]){
+                        return false;}
+                    break;
+
+                case 2://derecha
+                    if (posicionZombie[zombie][0] == posicionZombie[i][0] 
+                            && posicionZombie[zombie][1] + 1 == posicionZombie[i][1]){
+                        return false;}
+
+                case 3://izquierda
+                    if (posicionZombie[zombie][0] == posicionZombie[i][0] 
+                            && posicionZombie[zombie][1] - 1 == posicionZombie[i][1]){
+                        return false;}
+                    break;
+            }          
+        }
+        return true;
+    }
 }
