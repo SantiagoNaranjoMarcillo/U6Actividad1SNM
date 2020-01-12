@@ -59,4 +59,12 @@ public class Partida {
         Zombies.mueveATodosLosZombies(posicionZombies, escenario, posicionSuperviviente);
     }
     
+    public static boolean partidaGanada(int[][] escenario, int[] posicionSuperviviente){
+        if(puntuacionSuperviente(escenario, posicionSuperviviente) == 85)
+            return true;
+        else
+            return false;
+        
+    }
+    
 }
