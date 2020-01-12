@@ -8,5 +8,8 @@ import java.util.Scanner;
  */
 public class Partida {
 
+    private static final int PUNTO = 1;
+    private static final int VIDAS = 3;
+
 
 }
