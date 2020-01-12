@@ -67,4 +67,10 @@ public class Partida {
         
     }
     
+    public static boolean partidaPerdida(int[] posicionSuperviviente, int[][] posicionZombie){
+        if(numeroVidas(posicionSuperviviente, posicionZombie) == 0)
+            return true;
+        else
+            return false;
+    }
 }
