@@ -33,6 +33,24 @@ public class Partida {
         System.out.println("PUNTOS: " + puntuacionSuperviente(escenario, posicionSuperviviente));
         System.out.println("VIDAS: " + VIDAS);
     }
+    
+    public static String pedirMovimientoCorrecto() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.print("\nIntroduce el movimeinto (W/A/S/D) o h para salir: ");
+            String respuesta = scanner.nextLine();
+            if (respuesta.equals("W") 
+                    || respuesta.equals("S") 
+                    || respuesta.equals("D") 
+                    || respuesta.equals("A")
+                    || respuesta.equals("H"))
+                return respuesta;
+            else
+                System.out.println("Introduce un movimiento correcto.");
+        } while (true);
+    }
 
     
     public static int puntuacionSuperviente(int[][] escenario, int[] posicionSuperviviente){
