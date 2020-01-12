@@ -42,7 +42,17 @@ public class Partida {
             return + 0;
     }
     
-
+    public static int numeroVidas(int[] posicionSuperviviente, int[][] posicionZombie){
+        if(posicionSuperviviente[0] ==  posicionZombie[0][0] 
+                && posicionSuperviviente[1] ==  posicionZombie[0][1]
+                && posicionSuperviviente[0] ==  posicionZombie[1][0]
+                && posicionSuperviviente[1] ==  posicionZombie[1][1]
+                && posicionSuperviviente[0] ==  posicionZombie[2][0]
+                && posicionSuperviviente[1] ==  posicionZombie[2][1])
+            return VIDAS - 1;
+        else
+            return + 0;
+    }
     
-   
+ 
 }
