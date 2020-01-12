@@ -30,7 +30,19 @@ public class Partida {
             }
             System.out.println("");
         }
-
+        System.out.println("PUNTOS: " + puntuacionSuperviente(escenario, posicionSuperviviente));
+        System.out.println("VIDAS: " + VIDAS);
     }
 
+    
+    public static int puntuacionSuperviente(int[][] escenario, int[] posicionSuperviviente){
+        if(Casillas.hayItem(escenario, posicionSuperviviente[0], posicionSuperviviente[1]))
+            return + PUNTO;
+        else
+            return + 0;
+    }
+    
+
+    
+   
 }
