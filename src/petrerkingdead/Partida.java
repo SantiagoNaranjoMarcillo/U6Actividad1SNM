@@ -54,5 +54,9 @@ public class Partida {
             return + 0;
     }
     
- 
+    public static void mueveATodosPersonajes(int[][] posicionZombies, int[] posicionSuperviviente, String respuesta, int[][] escenario){
+        Superviviente.mueveSuperviviente(posicionSuperviviente, respuesta, escenario);
+        Zombies.mueveATodosLosZombies(posicionZombies, escenario, posicionSuperviviente);
+    }
+    
 }
