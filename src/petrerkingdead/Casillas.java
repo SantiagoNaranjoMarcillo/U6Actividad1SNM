@@ -44,19 +44,18 @@ public class Casillas {
         return escenario[x][y] != TIPO_ITEM;
     }
 
-    public static boolean vaciaCasilla(int[][] escenario, int x, int y) {
-        return escenario[x][y] != TIPO_VACIA;
+    public static void vaciaCasilla(int[][] escenario, int x, int y) {
+        escenario[x][y] = TIPO_VACIA;
     }
 
     public static String casillaATexto(int[][] escenario, int x, int y) {
-        if (escenario[x][y] == TIPO_VACIA) {
+        if (escenario[x][y] == TIPO_VACIA) 
             return " ";
-        } else if (escenario[x][y] == TIPO_ITEM) {
-            return "·";
-        } else if (escenario[x][y] == TIPO_LIMITE) {
-            return "\"";
-        } else {
+        else if (escenario[x][y] == TIPO_ITEM) 
+            return "\u001b[33;1m·\u001b[0m";
+        else if (escenario[x][y] == TIPO_LIMITE) 
+            return "\u001b[40;1m\"\u001b[0m";
+         else 
             return "";
-        }
     }
 }
